@@ -1,32 +1,32 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import s from './Profile.module.css';
 
 export default function Profile({ username, tag, location, avatar, stats }) {
     return (
-        <div className="profile">
-            <div className="description">
+        <div className={s.profile}>
+            <div className={s.description}>
                 <img
-                    src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+                    src={avatar}
                     alt="User avatar"
-                    class="avatar"
+                    class={s.avatar}
                 />
-                <p className="name">Petra Marica</p>
-                <p className="tag">@pmarica</p>
-                <p className="location">Salvador, Brasil</p>
+                <p className={s.name}>{username}</p>
+                <p className={s.tag}>{tag}</p>
+                <p className={s.location}>{location} </p>
             </div>
 
-            <ul className="stats">
+            <ul className={s.stats}>
                 <li>
-                    <span className="label">Followers</span>
-                    <span className="quantity">1000</span>
+                    <span className={s.label}>Followers</span>
+                    <span className={s.quantity}>{stats.followers} </span>
                 </li>
                 <li>
-                    <span className="label">Views</span>
-                    <span className="quantity">2000</span>
+                    <span className={s.label}>Views</span>
+                    <span className={s.quantity}>{stats.views} </span>
                 </li>
                 <li>
-                    <span className="label">Likes</span>
-                    <span className="quantity">3000</span>
+                    <span className={s.label}>Likes</span>
+                    <span className={s.quantity}>{stats.likes} </span>
                 </li>
             </ul>
         </div>
