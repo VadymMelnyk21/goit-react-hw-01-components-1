@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import s from './Profile.module.css';
 
 export default function Profile({ username, tag, location, avatar, stats }) {
@@ -8,7 +8,7 @@ export default function Profile({ username, tag, location, avatar, stats }) {
                 <img
                     src={avatar}
                     alt="User avatar"
-                    class={s.avatar}
+                    className={s.avatar}
                 />
                 <p className={s.name}>{username}</p>
                 <p className={s.tag}>{tag}</p>
@@ -31,4 +31,16 @@ export default function Profile({ username, tag, location, avatar, stats }) {
             </ul>
         </div>
     )
-}
+};
+
+Profile.propTypes = {
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.shape({
+        followers: PropTypes.number,
+        views: PropTypes.number,
+        likes: PropTypes.number,
+    }).isRequired,
+};
