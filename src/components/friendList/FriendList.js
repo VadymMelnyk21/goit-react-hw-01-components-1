@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import FriendListItem from './FriendListItem'
 import s from './FriendList.module.css';
 
@@ -18,3 +18,7 @@ export default function FriendLis({ friends }) {
         </ul >
     )
 };
+
+FriendLis.propTypes = {
+    friends: PropTypes.arrayOf(PropTypes.object),
+}
