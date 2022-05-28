@@ -1,23 +1,23 @@
 import PropTypes from 'prop-types';
-// import s from './FriendList.module.css';
+import s from './TransactionHistory.module.css';
 
 export default function TransactionHistory({ items }) {
     return (
-        <table class="transaction-history">
+        <table className={s.transactionHistory}>
             <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
+                <tr className={s.head}>
+                    <th className={s.headTitle}>Type</th>
+                    <th className={s.headTitle}>Amount</th>
+                    <th className={s.headTitle}>Currency</th>
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody className={s.body}>
                 {items.map(({ id, type, amount, currency }) => (
-                    <tr key={id}>
-                        <td>{type}</td>
-                        <td>{amount}</td>
-                        <td>{currency} </td>
+                    <tr className={s.bodyItem} key={id}>
+                        <td className={s.bodyTdType}>{type}</td>
+                        <td className={s.bodyTd}>{amount}</td>
+                        <td className={s.bodyTd}>{currency} </td>
                     </tr>
                 ))
                 }
